@@ -33,7 +33,7 @@ class APIClient(object):
         try:
             blackbox_logger.info("Initialized method import_config")
             config = configparser.ConfigParser(interpolation=None)
-            config.read("config.ini")
+            config.read(".config/config.ini")
             self.BEARER_TOKEN = config["twitter"]["bearer_token"]
             self.API_KEY = config["twitter"]["api_key"]
             self.API_KEY_SECRET = config["twitter"]["api_key_secret"]

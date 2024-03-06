@@ -18,7 +18,7 @@ class CustomSearchEngine(object):
         try:
             blackbox_logger.info("Initialized method import_config")
             config = configparser.ConfigParser(interpolation=None)
-            config.read("config.ini")
+            config.read(".config/config.ini")
             self.API_KEY = config["google"]["api_key"]
             self.SEARCH_ENGINE_ID = config["google"]["search_engine_id"]
         except KeyError:

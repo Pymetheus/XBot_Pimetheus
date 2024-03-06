@@ -12,6 +12,6 @@ class Blackbox(object):
         self.logger = logging.getLogger(self.logger_name)
         self.logger.setLevel(logging.INFO)
         formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-        handler = logging.FileHandler('blackbox.log')
+        handler = logging.FileHandler('../log/blackbox.log')
         handler.setFormatter(formatter)
         self.logger.addHandler(handler)
