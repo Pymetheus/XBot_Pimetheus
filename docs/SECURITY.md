@@ -1,10 +1,10 @@
 # Security Policy
-We take the security and integrity of the Briscola Card Game seriously. 
+We take the security and integrity of the XBot seriously. 
 If you believe you have found a security vulnerability, please report it to us as described below.
 
 ## Supported Versions
 
-Currently only the Genesis version of the Briscola Card Game is supported.
+Currently only the Genesis version of the XBot is supported.
 
 | Version | Supported          |
 | ------- | ------------------ |
