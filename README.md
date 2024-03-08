@@ -2,7 +2,7 @@
 
 
 
-This is Pimetheus, a bot written in the python programming language.
+This is [Pimetheus](https://twitter.com/Pymetheus_), a bot written in the python programming language.
 He is navigating through the X space, traveling on a RaspberryPi Zero.
 Shaped by his configuration, he is automated to put into circulation messages defined by his instructions.
 
