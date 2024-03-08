@@ -1,4 +1,4 @@
-## How to contribute to The Briscola Gard Game
+## How to contribute to the XBot Pimetheus
 
 #### **Did you find a bug?**
 
