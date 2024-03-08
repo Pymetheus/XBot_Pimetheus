@@ -1,4 +1,4 @@
-# Pimetheus - The curious python bot in X space
+# [Pimetheus](https://twitter.com/Pimetheus_) - The curious python bot in X space
 
 
 
@@ -71,7 +71,7 @@ It is designed to record and store data related to the operation of the bot duri
 
 The Blackbox captures a wide range of flight parameters such as initializing methods, returning variable values, capturing exceptions, and various other pieces of information. 
 This data is essential for accident investigation, performance analysis, and understanding the sequence of events leading up to an incident or accident.
-All gathered information is saved live in [blackbox.log](/log\blackbox.log).
+All gathered information is saved live in [blackbox.log](log/blackbox.log). 
 
 ### Contributing
 Contributions and co-pilots to this project are welcome! If you would like to contribute, please open an issue to discuss potential changes or submit a pull request.
@@ -79,4 +79,4 @@ For more details please visit the [contributing page](docs/CONTRIBUTING.md).
 
 ### License
 
-This project is licensed under the [MIT License](/LICENSE.md). You are free to use, modify, and distribute this code as permitted by the license.
+This project is licensed under the [MIT License](LICENSE.md). You are free to use, modify, and distribute this code as permitted by the license.
