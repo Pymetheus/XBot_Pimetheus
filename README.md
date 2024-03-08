@@ -3,7 +3,7 @@
 
 
 This is Pimetheus, a bot written in the python programming language.
-He is navigating through the X space, travelling on a RaspberryPi Zero.
+He is navigating through the X space, traveling on a RaspberryPi Zero.
 Shaped by his configuration, he is automated to put into circulation messages defined by his instructions.
 
 
@@ -62,20 +62,20 @@ Navigate through **GoogleCustomSearchEngine.py** to exploit the power of custom 
 while the APIClient class in **TwitterAPIClient.py** empowers one to unleash messages on X.
 **BotActions.py** is where the magic happens, where the RaspberryPi bot comes to life and his actions and interactions are defined.
 
-Lastly **main.py** serves as mission control, orchestrating the entire operation, utilizing inputs from the SpaceKeywordList to execute specified bot actions.
+Lastly, **main.py** serves as mission control, orchestrating the entire operation, utilizing inputs from the SpaceKeywordList to execute specified bot actions.
 
 
 ### Blackbox
 The **Blackbox.py**, leveraging the *logging* module, serves as a critical component for Pimetheus safety. 
-It is designed to record and store data related to the operation of the bot during his journey trough space.
+It is designed to record and store data related to the operation of the bot during his journey through space.
 
 The Blackbox captures a wide range of flight parameters such as initializing methods, returning variable values, capturing exceptions, and various other pieces of information. 
 This data is essential for accident investigation, performance analysis, and understanding the sequence of events leading up to an incident or accident.
-All gathered information is saved live in [blackbox.log](/log\blackbox.log)
+All gathered information is saved live in [blackbox.log](/log\blackbox.log).
 
 ### Contributing
 Contributions and co-pilots to this project are welcome! If you would like to contribute, please open an issue to discuss potential changes or submit a pull request.
-For more details please visit the [contributing page](docs/CONTRIBUTING.md)
+For more details please visit the [contributing page](docs/CONTRIBUTING.md).
 
 ### License
 
