@@ -26,7 +26,7 @@ class CustomSearchEngine(object):
 
     def set_custom_search_parameters(self, search_query):
         blackbox_logger.info("Initialized method set_custom_search_parameters")
-        blackbox_logger.info(f"GET search query: {search_query}")
+        blackbox_logger.info(f"RETURN search query: {search_query}")
         parameter = {
             'q': search_query,
             'key': self.API_KEY,
@@ -34,7 +34,7 @@ class CustomSearchEngine(object):
             'lr': 'lang_en',
             'siteSearch': 'https://en.wikipedia.org'
         }
-        blackbox_logger.info(f"SET parameters to {parameter}")
+        blackbox_logger.info(f"RETURN parameters {parameter}")
         return parameter
 
     def get_custom_search_results(self, params):
@@ -43,10 +43,11 @@ class CustomSearchEngine(object):
             url = 'https://www.googleapis.com/customsearch/v1'
             response = requests.get(url, params=params)
             results = response.json()
-            blackbox_logger.info(f"GET results: {str(results).encode('utf8').decode('ascii', 'ignore')}")
+            blackbox_logger.info(f"RETURN results: {str(results).encode('utf8').decode('ascii', 'ignore')}")
             return results
-        except:
-            blackbox_logger.exception(f"method get_custom_search_results")
+        except Exception as e:
+            blackbox_logger.warning("method get_custom_search_results")
+            blackbox_logger.exception(f"RETURN: {e}")
 
     def get_custom_search_metadata_results(self, results):
         try:
@@ -57,10 +58,11 @@ class CustomSearchEngine(object):
             search_query_string = str(search_query).replace(" ", "")
             metadata_text = f"Used Search API to find #{search_query_string}.\n{total_results} results in {round(search_time, 2)} sec."
 
-            blackbox_logger.info(f"GET metadata: {metadata_text}")
+            blackbox_logger.info(f"RETURN metadata: {metadata_text}")
             return metadata_text
-        except:
-            blackbox_logger.exception(f"method get_custom_search_metadata_results")
+        except Exception as e:
+            blackbox_logger.warning("method get_custom_search_metadata_results")
+            blackbox_logger.exception(f"RETURN: {e}")
 
     def get_custom_search_url_results(self, results):
         try:
@@ -72,22 +74,24 @@ class CustomSearchEngine(object):
             # Added encoding to avoid UnicodeEncodeError: 'charmap' codec can't encode character
             search_result_text = str(search_result_text).encode('utf8').decode('ascii', 'ignore')
 
-            blackbox_logger.info(f"GET search result text: {search_result_text}")
+            blackbox_logger.info(f"RETURN search result text: {search_result_text}")
             return search_result_text
-        except:
-            blackbox_logger.exception(f"method get_custom_search_url_results")
+        except Exception as e:
+            blackbox_logger.warning("method get_custom_search_url_results")
+            blackbox_logger.exception(f"RETURN: {e}")
 
     def create_custom_search_result_message(self, metadata, url_snippet):
         try:
             blackbox_logger.info("Initialized method create_custom_search_result_message")
             result_message = metadata + "\n" + url_snippet
-            blackbox_logger.info(f"GET search result message: {result_message}")
-            blackbox_logger.info(f"GET search result message length: {len(result_message)}")
-            blackbox_logger.info(f"GET search result message type: {type(result_message)}")
+            blackbox_logger.info(f"RETURN search result message: {result_message}")
+            blackbox_logger.info(f"RETURN search result message length: {len(result_message)}")
+            blackbox_logger.info(f"RETURN search result message type: {type(result_message)}")
             return result_message
 
-        except:
-            blackbox_logger.exception(f"method create_custom_search_result_message")
+        except Exception as e:
+            blackbox_logger.warning("method create_custom_search_result_message")
+            blackbox_logger.exception(f"RETURN: {e}")
 
     def execute_custom_search_message_creation(self, search_query):
         blackbox_logger.info("Initialized method execute_custom_search_message_creation")
@@ -96,5 +100,5 @@ class CustomSearchEngine(object):
         metadata_result = self.get_custom_search_metadata_results(result)
         url_result = self.get_custom_search_url_results(result)
         message = self.create_custom_search_result_message(metadata_result, url_result)
-        blackbox_logger.info(f"GET search result message: {message}")
+        blackbox_logger.info(f"RETURN search result message: {message}")
         return message

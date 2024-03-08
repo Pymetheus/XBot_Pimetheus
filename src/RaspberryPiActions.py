@@ -14,8 +14,9 @@ def get_raspi_gpu_temperature():
         temp = line.split("=")[1].split("'")[0]
         blackbox_logger.info(f"RETURN raspi temperature: {temp}")
         return temp
-    except:
-        blackbox_logger.exception("method get_raspi_gpu_temperature")
+    except Exception as e:
+        blackbox_logger.warning("method get_raspi_gpu_temperature")
+        blackbox_logger.exception(f"RETURN: {e}")
 
 
 def get_raspi_up_time():
@@ -26,8 +27,9 @@ def get_raspi_up_time():
         up_time_str = up_time[3::]
         blackbox_logger.info(f"RETURN raspi up time: {up_time_str}")
         return up_time_str
-    except:
-        blackbox_logger.exception("method get_raspi_uptime")
+    except Exception as e:
+        blackbox_logger.warning("method get_raspi_uptime")
+        blackbox_logger.exception(f"RETURN: {e}")
 
 
 def renew_raspi_dhclient():
@@ -44,5 +46,6 @@ def renew_raspi_dhclient():
         output = stream.readline()
         blackbox_logger.info(f"RETURN renewal info {output}")
         time.sleep(5)
-    except:
-        blackbox_logger.exception("method renew_raspi_dhclient")
+    except Exception as e:
+        blackbox_logger.warning("method renew_raspi_dhclient")
+        blackbox_logger.exception(f"RETURN: {e}")
