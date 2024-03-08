@@ -39,11 +39,9 @@ def get_raspi_cpu_load():
     #cpu = f.read()
     #print(cpu)
 
+
 def get_hostname():
     cmd = "hostname"
     stream = os.popen(cmd)
     output = stream.readlines()
     print(output)
-
-
-
