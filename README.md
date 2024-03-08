@@ -1,4 +1,4 @@
-# [Pimetheus](https://twitter.com/Pymetheus_) - The curious python bot in X space
+# [Pimetheus](https://twitter.com/Pimetheus_) - The curious python bot in X space
 
 
 
