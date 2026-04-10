@@ -1,0 +1,21 @@
+# CODEOWNERS
+
+# Default owner for everything
+* @Pymetheus
+
+# Core application code
+/src/ @Pymetheus
+
+# Tests require review
+/tests/ @Pymetheus
+
+# Configuration changes need approval
+/.config/ @Pymetheus
+pyproject.toml @Pymetheus
+
+# CI/CD changes need approval
+/.github/ @Pymetheus
+
+# Documentation
+/docs/ @Pymetheus
+*.md @Pymetheus
