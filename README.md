@@ -1,82 +1,107 @@
-# [Pimetheus](https://twitter.com/Pimetheus_) - The curious python bot in X space
+# [Pimetheus](https://bsky.app/profile/pimetheus.bsky.social) - The curious python bot in space
 
-
-
-This is Pimetheus, a bot written in the python programming language.
-He is navigating through the X space, traveling on a RaspberryPi Zero.
-Shaped by his configuration, he is automated to put into circulation messages defined by his instructions.
-
+This is Pimetheus, he is currently navigating through the Bluesky space, traveling on a Raspberry Pi.
+Shaped by his configuration, he is automated to put messages into circulation defined by his instructions.
+Previously home to the X (Twitter) space, he's currently exploring Bluesky.
 
 ![Pimetheus](res/Pimetheus-Image.png)
 
-## Table of Contents
 
+## Table of Contents
 - [Instructions](#Instructions)
-- [Requirements](#requirements)
-- [Getting Started](#getting-started)
-  - [Installation](#installation)
+- [Specifications](#specifications)
+  - [Onboard equipment](#onboard-equipment)
+  - [Core dependencies](#core-dependencies)
   - [Source code](#source-code)
-  - [Blackbox](#blackbox)
+  - [Black box](#black-box)
 - [Contributing](#contributing)
 - [License](#license)
 
 
 ## Instructions
-Pimetheus instructions ain't rocket science. Every morning, he's starting his journey through X space.
-Powered by the Google Search Engine, he is exploring space terms and retrieving relevant Wikipedia results.
-On his adventure he's not only tickling his audience with space jokes, but also illuminating them with famous space quotes, 
-while constantly controlling the CPU temperature of the RaspberryPi and his travel time.
+Pimetheus instructions ain't rocket science. Every morning, he's starting his journey with a launch message.
+While orbiting through the cosmos, he makes several API calls, validates and extracts the data, transforms them into posts and loads them up to space.
 
-## Requirements
-- Python 3.x
-- RaspberryPi
+**NASA API:**
+- Latest Astronomy Picture of the Day (APOD).
+- Recent pictures from the Earth Polychromatic Imaging Camera (EPIC).
+
+**Google Search API:**
+- Exploring space terms and retrieving relevant Wikipedia results.
+
+**Rocket Launch API:**
+- Upcoming orbital rocket launches
+
+On his adventure he's not only sharing space related information with his audience, but also engaging with them through reposts and likes.
+Regularly he controls the temperature of his travel device, the Raspberry Pi, and shares it together with his travel time.
+
+
+## Specifications
+
+### Onboard equipment
+- Raspberry Pi
+- Bluesky account
 - X Developer account
 - Google Developer account
+- NASA API keys
 
-## Getting Started
-### Installation
 
-1. [Clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) the repository to your local machine:
+### Core dependencies
+- Python 3.12
+- Validation: `pydantic`
+- Structured logging: `structlog`
+- Http requests: `httpx`
+- Image processing: `pillow`
+- X API: `tweepy`
+- Bluesky API: `atproto`
+
+
+### Source Code
+Pimetheus is built on top of a strict `src/` layout, with the `pyproject.toml` as his center of gravitation.
+In the `infrastructure` subdirectory he manages http connections for API calls, image processing, Raspberry Pi interactions and storage handling.
+Under the `integrations/apis` subdirectory he fetches, validates and extracts data from various APIs,
+whereas under the `integrations/publish` subdirectory he interacts with the Bluesky and X (Twitter) API.
+In the `services` subdirectory the bot actions like publishing posts and engagement are managed.
+
+Pimetheus has the following built-in flags:
+- **offline**: If True, posting and engagement interactions are only simulated.
+- **emulation**: If True, interactions with the Raspberry Pi are emulated.
+- **twitter**: If True, posting to X (Twitter) is enabled.
+- **bluesky**: If True, posting to Bluesky is enabled.
+
+These flags and other settings are loaded from the configurations file `config.{APP_ENV}.toml`.
+
+
+### Black box
+For his Black box, Pimetheus relies on structured logging, a critical component for learning from accidents and serious incidents during his travels.
+All of his actions, flight parameters, system warnings and errors get by default streamed to stdout, but logging to json file can easily be enabled.
+This data is essential for accident investigation, performance analysis, and understanding the sequence of events leading up to an incident or accident.
+
+## Cloning
+If you want to clone Pimetheus to create your own space traveler powered by a Raspberry Pi follow those steps:
+
+1. Clone the repository to your local machine:
 
     ```bash
     git clone https://github.com/Pymetheus/XBot_Pimetheus
     ```
-
-2. Change into the project directory:
-
+2. Replace Pimetheus with your bot name
     ```bash
     cd XBot_Pimetheus
+    grep -rl "pimetheus" . | xargs sed -i "s|pimetheus|<your-bot-name>|g"
+    mv src/pimetheus "src/<your-bot-name>"
     ```
-3. Update the API keys in the config.ini
-
+3. Update the API keys in the env file
     ```bash
-   cd XBot_Pimetheus\.config\config.ini
-   ```
-
-### Source Code
-The source code of Pimetheus is located in the **src** directory, organized into separate modules.
-
-Discover in **RaspberryPiActions.py** the functions dedicated to fetching CPU temperature, system uptime, and renewing the dhclient.
-The **SpaceKeywordList.py** houses three distinct lists: space terms, jokes, and quotes, for the cosmic expedition.
-Navigate through **GoogleCustomSearchEngine.py** to exploit the power of custom search queries,
-while the APIClient class in **TwitterAPIClient.py** empowers one to unleash messages on X.
-**BotActions.py** is where the magic happens, where the RaspberryPi bot comes to life and his actions and interactions are defined.
-
-Lastly, **main.py** serves as mission control, orchestrating the entire operation, utilizing inputs from the SpaceKeywordList to execute specified bot actions.
+    mv .config/.env.example ".config/.env.dev"
+    nano .config/.env.dev
+    ```
 
 
-### Blackbox
-The **Blackbox.py**, leveraging the *logging* module, serves as a critical component for Pimetheus safety. 
-It is designed to record and store data related to the operation of the bot during his journey through space.
-
-The Blackbox captures a wide range of flight parameters such as initializing methods, returning variable values, capturing exceptions, and various other pieces of information. 
-This data is essential for accident investigation, performance analysis, and understanding the sequence of events leading up to an incident or accident.
-All gathered information is saved live in [blackbox.log](log/blackbox.log). 
-
-### Contributing
+## Contributing
 Contributions and co-pilots to this project are welcome! If you would like to contribute, please open an issue to discuss potential changes or submit a pull request.
 For more details please visit the [contributing page](docs/CONTRIBUTING.md).
 
-### License
+## License
 
 This project is licensed under the [MIT License](LICENSE.md). You are free to use, modify, and distribute this code as permitted by the license.
