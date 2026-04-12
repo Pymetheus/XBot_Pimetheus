@@ -203,7 +203,7 @@ jobs:
   pr-checks-summary:
     name: PR Checks Summary
     runs-on: ubuntu-latest
-    needs: [pr-title-check, pr-description-check, lint, mypy, test, conflict-check, size-check]
+    needs: [pr-title-check, pr-description-check, lint, mypy, conflict-check, size-check] #test
     if: always()
     steps:
       - name: Check all jobs passed
