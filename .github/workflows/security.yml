@@ -98,7 +98,7 @@ jobs:
           uv sync
 
       - name: Run Bandit security linter
-        run: uv run bandit -r src/ -f json -o bandit-report.json
+        run: uv run bandit -r src/ -c pyproject.toml -f json -o bandit-report.json
 
       - name: Upload Bandit results
         if: always()
