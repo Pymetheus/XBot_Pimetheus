@@ -8,4 +8,4 @@ bluesky = "False"
 
 [bluesky]
 esa_handles = ["esa.int", "exploration.esa.int", "navigation.esa.int", "esaearth.esa.int", "science.esa.int", "transport.esa.int", "esaconnectivity.esa.int"]
-space_handles = ["rocketlabcorp.com", "nasaspaceflight.com", "thalesaleniaspace.bsky.social",  "eumetsat.int"]
+space_handles = ["rocketlabcorp.com", "nasaspaceflight.com", "thalesaleniaspace.bsky.social",  "eumetsat.int", "stsci.edu"]

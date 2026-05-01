@@ -92,6 +92,10 @@ class ImageProcessor:
 
                 buffer = io.BytesIO()
                 quality = 100
+
+                if img.mode in ("RGBA", "P"):
+                    img = img.convert("RGB")
+
                 img.thumbnail((self.MAX_DIMENSION, self.MAX_DIMENSION), Image.Resampling.LANCZOS)
 
                 while quality > 0:
