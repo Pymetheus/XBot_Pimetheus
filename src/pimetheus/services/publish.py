@@ -48,12 +48,15 @@ class Messenger:
         logger.info("Starting Messenger")
         self.message_dict = message_dict
 
-        self.twitter_client = TwitterAPIClient()
-        self.bluesky_client = BlueskyAPIClient()
-        self.bluesky_creator = BlueskyCreator(self.bluesky_client)
-
         self.twitter = self.settings.pimetheus.twitter
         self.bluesky = self.settings.pimetheus.bluesky
+
+        if self.twitter:
+            self.twitter_client = TwitterAPIClient()
+
+        if self.bluesky:
+            self.bluesky_client = BlueskyAPIClient()
+            self.bluesky_creator = BlueskyCreator(self.bluesky_client)
 
     def create_twitter_message(self) -> str:
         """

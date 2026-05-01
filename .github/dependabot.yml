@@ -11,10 +11,6 @@ updates:
     labels:
       - "dependencies"
       - "python"
-    reviewers:
-      - "@Pymetheus"
-    assignees:
-      - "@Pymetheus"
     commit-message:
       prefix: "chore(deps)"
 
