@@ -87,7 +87,7 @@ class ImageProcessor:
 
             logger.info("Processing image", path=self.filepath, size=original_size_kb, target_size=target_size_kb)
 
-            with Image.open(self.filepath) as img:
+            with Image.open(self.filepath) as img:  # type: Image.Image
                 logger.info("Original dimensions", width=img.size[0], height=img.size[1], size=original_size_kb)
 
                 buffer = io.BytesIO()
