@@ -8,6 +8,7 @@ from httpx import NetworkError
 from pydantic import ValidationError
 
 from pimetheus.infrastructure.http.exceptions import HTTPClientError
+from pimetheus.infrastructure.image.exceptions import ImageProcessingError
 from pimetheus.infrastructure.image.processor import ImageProcessor
 from pimetheus.infrastructure.raspberrypi.system import GroundControl
 from pimetheus.infrastructure.storage.files import FileStorage
@@ -33,8 +34,8 @@ class Bot:
 
     settings = Settings.load()
     MAX_IMAGE_SIZE_KB = 976
-    MIN_SLEEP_TIME = 3000
-    MAX_SLEEP_TIME = 3600
+    MIN_SLEEP_TIME = 3300
+    MAX_SLEEP_TIME = 3650
 
     def __init__(self) -> None:
         """
@@ -204,6 +205,8 @@ class Bot:
             logger.error("Failed to fetch json", exc_info=e)
         except NetworkError as e:
             logger.error("Failed to publish post", exc_info=e)
+        except ImageProcessingError as e:
+            logger.error("Failed to process image", exc_info=e)
         finally:
             if fetcher is not None:
                 fetcher.http_client.close()
