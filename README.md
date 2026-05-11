@@ -83,11 +83,11 @@ If you want to clone Pimetheus to create your own space traveler powered by a Ra
 1. Clone the repository to your local machine:
 
     ```bash
-    git clone https://github.com/Pymetheus/XBot_Pimetheus
+    git clone https://github.com/Pymetheus/Bot_Pimetheus
     ```
 2. Replace Pimetheus with your bot name
     ```bash
-    cd XBot_Pimetheus
+    cd Bot_Pimetheus
     grep -rl "pimetheus" . | xargs sed -i "s|pimetheus|<your-bot-name>|g"
     mv src/pimetheus "src/<your-bot-name>"
     ```

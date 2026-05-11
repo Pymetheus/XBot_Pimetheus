@@ -1,10 +1,10 @@
-## How to contribute to the XBot Pimetheus
+## How to contribute to the Bot Pimetheus
 
 #### **Did you find a bug?**
 
-* Ensure the bug was not already reported by searching on GitHub under [Issues](https://github.com/Pymetheus/XBot_Pimetheus/issues).
+* Ensure the bug was not already reported by searching on GitHub under [Issues](https://github.com/Pymetheus/Bot_Pimetheus/issues).
 
-* If you're unable to find an open issue addressing the problem, [open a new one](https://github.com/Pymetheus/XBot_Pimetheus/issues/new).
+* If you're unable to find an open issue addressing the problem, [open a new one](https://github.com/Pymetheus/Bot_Pimetheus/issues/new).
   Be sure to include a title and clear description.
 
 #### **Did you write a patch that fixes a bug?**
@@ -17,4 +17,4 @@
 
 #### **Do you have questions about the source code?**
 
-* Ask any question about how to use XBot by [Email](mailto:github.senate902@passfwd.com).
+* Ask any question about how to use Bot by [Email](mailto:github.senate902@passfwd.com).

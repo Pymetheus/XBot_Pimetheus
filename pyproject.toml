@@ -33,10 +33,10 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/Pymetheus/XBot_Pimetheus"
-Repository = "https://github.com/Pymetheus/XBot_Pimetheus"
-Documentation = "https://github.com/Pymetheus/XBot_Pimetheus/blob/main/docs/DOCUMENTATION.md"
-Issues = "https://github.com/Pymetheus/XBot_Pimetheus/issues"
+Homepage = "https://github.com/Pymetheus/Bot_Pimetheus"
+Repository = "https://github.com/Pymetheus/Bot_Pimetheus"
+Documentation = "https://github.com/Pymetheus/Bot_Pimetheus/blob/main/docs/DOCUMENTATION.md"
+Issues = "https://github.com/Pymetheus/Bot_Pimetheus/issues"
 
 [project.scripts]
 pimetheus = "pimetheus.main:main"
