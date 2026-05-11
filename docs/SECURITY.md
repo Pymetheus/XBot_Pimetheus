@@ -1,10 +1,10 @@
 # Security Policy
-We take the security and integrity of the XBot seriously.
+We take the security and integrity of the Bot seriously.
 If you believe you have found a security vulnerability, please report it to us as described below.
 
 ## Supported Versions
 
-Currently only the Genesis version of the XBot is supported.
+Currently only the Genesis version of the Bot is supported.
 
 | Version | Supported          |
 | ------- | ------------------ |
