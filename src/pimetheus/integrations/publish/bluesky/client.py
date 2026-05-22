@@ -4,7 +4,8 @@ from typing import TypeVar, cast
 
 import structlog
 from atproto import Client
-from atproto_client.exceptions import InvokeTimeoutError
+from atproto_client.exceptions import InvokeTimeoutError as AtprotoInvokeTimeoutError
+from atproto_client.exceptions import NetworkError as AtprotoNetworkError
 from httpx import NetworkError
 
 from pimetheus.utils.config import Settings
@@ -53,7 +54,7 @@ class BlueskyAPIClient:
             logger.info("Executing API call", action=action, attempt=attempt + 1)
             try:
                 return function()
-            except (InvokeTimeoutError, NetworkError) as e:
+            except (AtprotoInvokeTimeoutError, AtprotoNetworkError) as e:
                 logger.warning("API call failed", action=action)
                 last_exception = e
 
